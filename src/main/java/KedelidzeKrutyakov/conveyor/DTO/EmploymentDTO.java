@@ -7,21 +7,38 @@ public class EmploymentDTO { // Информация о занятости за�
     private String employerINN; // ИНН работодателя
     private BigDecimal salary; // Зарплата
     private Position position; // Должность
+
+    public void setEmploymentStatus(EmploymentStatus employmentStatus) {
+        this.employmentStatus = employmentStatus;
+    }
+
+    public void setPosition(Position position) {
+        this.position = position;
+    }
+
+    public EmploymentStatus getEmploymentStatus() {
+        return employmentStatus;
+    }
+
+    public Position getPosition() {
+        return position;
+    }
+
     private Integer workExperienceTotal; // Стаж работы
     private Integer workExperienceCurrent; // Стаж работы на текущей работе
 
     public enum EmploymentStatus {
-        WORKING,
-        NOT_WORKING,
-        SELF_EMPLOYED, // Самозанятый
-        RETIRED // Пенсионер
+        UNEMPLOYED, // безработный
+        SELF_EMPLOYED, // самозанятый
+        EMPLOYED, // трудоустроен
+        BUSINESS_OWNER // владелец бизнеса
     }
 
     public enum Position {
-        MANAGER, // Менеджер
-        ENGINEER, // Инженер
-        ANALYST, // Аналитик
-        CLERK // Секретарь
+        WORKER, // работник
+        MID_MANAGER, // менеджер среднего звена
+        TOP_MANAGER,// топ-менеджер
+        OWNER, // владелец
     }
 
     public void setEmployerINN(String employerINN) {

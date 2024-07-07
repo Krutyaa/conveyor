@@ -11,11 +11,29 @@ public class ScoringDataDTO { // Данные заявителя для скор
     private String middleName; // Отчество
     private Gender gender; // Пол // Пол
     private LocalDate birthdate; // День рождения
+
+    public void setGender(Gender gender) {
+        this.gender = gender;
+    }
+
+    public void setMaritalStatus(MaritalStatus maritalStatus) {
+        this.maritalStatus = maritalStatus;
+    }
+
     private String passportSeries; // Серия паспорта
     private String passportNumber; // Номер паспорта
     private LocalDate passportIssueDate; // Дата выдачи паспорта
     private String passportIssueBranch; // Орган выдачи паспорта
     private MaritalStatus maritalStatus; // Семейное положение
+
+    public Gender getGender() {
+        return gender;
+    }
+
+    public MaritalStatus getMaritalStatus() {
+        return maritalStatus;
+    }
+
     private Integer dependentAmount; // Количество иждивенцев (дети)
     private EmploymentDTO employment; // Информация о занятности заявителя
     private String account; // Номер банковского счета
@@ -24,14 +42,13 @@ public class ScoringDataDTO { // Данные заявителя для скор
 
     public enum Gender {
         MALE,
-        FEMALE
+        FEMALE,
+        NON_BINARY // Не бинарный
     }
 
     public enum MaritalStatus {
-        SINGLE,
-        MARRIED,
-        DIVORCED, // Разведен
-        WIDOWED // Вдовец
+        SINGLE, // Холост/Не замужем
+        MARRIED // Замужем/Женат
     }
 
     public Integer getTerm() {
