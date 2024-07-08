@@ -9,10 +9,10 @@ POST: localhost:8080/conveyor/offers
 {
   "amount": 100000,
   "term": 12,
-  "firstName": "Иван",
-  "lastName": "Иванов",
-  "middleName": "Иванович",
-  "email": "ivanov@example.com",
+  "firstName": "John",
+  "lastName": "Smith",
+  "middleName": "Edward",
+  "email": "john.smith@example.com",
   "birthdate": "1990-01-01",
   "passportSeries": "1234",
   "passportNumber": "567890"
@@ -25,43 +25,42 @@ POST: localhost:8080/conveyor/offers
         "requestedAmount": 100000,
         "totalAmount": 100000,
         "term": 12,
-        "monthlyPayment": 9166.6667,
-        "rate": 0.10,
-        "insuranceEnabled": false,
-        "salaryClient": false
+        "monthlyPayment": 9583.3333,
+        "rate": 0.15,
+        "salaryClient": false,
+        "insuranceEnabled": false
     },
     {
         "applicationId": 2,
         "requestedAmount": 100000,
         "totalAmount": 100000,
         "term": 12,
-        "monthlyPayment": 9083.3333,
-        "rate": 0.09,
-        "insuranceEnabled": false,
-        "salaryClient": true
+        "monthlyPayment": 9500.0000,
+        "rate": 0.14,
+        "salaryClient": true,
+        "insuranceEnabled": false
     },
     {
         "applicationId": 3,
         "requestedAmount": 100000,
         "totalAmount": 200000,
         "term": 12,
-        "monthlyPayment": 17833.3333,
-        "rate": 0.07,
-        "insuranceEnabled": true,
-        "salaryClient": false
+        "monthlyPayment": 17666.6667,
+        "rate": 0.12,
+        "salaryClient": false,
+        "insuranceEnabled": true
     },
     {
         "applicationId": 4,
         "requestedAmount": 100000,
         "totalAmount": 200000,
         "term": 12,
-        "monthlyPayment": 17666.6667,
-        "rate": 0.06,
-        "insuranceEnabled": true,
-        "salaryClient": true
+        "monthlyPayment": 17583.3333,
+        "rate": 0.11,
+        "salaryClient": true,
+        "insuranceEnabled": true
     }
 ]
-
 
 POST: localhost:8080/conveyor/calculation
 {
@@ -71,7 +70,7 @@ POST: localhost:8080/conveyor/calculation
   "lastName": "Иванов",
   "middleName": "Иванович",
   "gender": "MALE",
-  "birthdate": "1990-01-01",
+  "birthdate": "1990-05-15",
   "passportSeries": "1234",
   "passportNumber": "567890",
   "passportIssueDate": "2015-10-20",
@@ -79,123 +78,123 @@ POST: localhost:8080/conveyor/calculation
   "maritalStatus": "MARRIED",
   "dependentAmount": 1,
   "employment": {
-    "employmentStatus": "WORKING",
+    "employmentStatus": "EMPLOYED",
     "employerINN": "1234567890",
     "salary": 100000.00,
-    "position": "MANAGER",
-    "workExperienceTotal": 8,
-    "workExperienceCurrent": 3
+    "position": "WORKER",
+    "workExperienceTotal": 12,
+    "workExperienceCurrent": 4
   },
   "account": "40817810099910000001",
-  "insuranceEnabled":false,
-  "salaryClient":  false
+  "insuranceEnabled": false,
+  "salaryClient": true
 }
 
 Вывод:
 {
     "amount": 100000,
     "term": 12,
-    "monthlyPayment": 9166.6667,
-    "rate": 0.10,
-    "psk": 110000.00,
+    "monthlyPayment": 9000.0000,
+    "rate": 0.08,
+    "psk": 108000.00,
     "paymentSchedule": [
         {
             "number": 1,
-            "date": "2024-08-04",
-            "totalPayment": 9166.6667,
-            "interestPayment": 916.6666666667,
+            "date": "2024-08-07",
+            "totalPayment": 9000.0000,
+            "interestPayment": 666.6666666667,
             "debtPayment": 8333.3333333333,
-            "remainingDebt": 100833.3333
+            "remainingDebt": 99000.0000
         },
         {
             "number": 2,
-            "date": "2024-09-04",
-            "totalPayment": 9166.6667,
-            "interestPayment": 916.6666666667,
+            "date": "2024-09-07",
+            "totalPayment": 9000.0000,
+            "interestPayment": 666.6666666667,
             "debtPayment": 8333.3333333333,
-            "remainingDebt": 91666.6666
+            "remainingDebt": 90000.0000
         },
         {
             "number": 3,
-            "date": "2024-10-04",
-            "totalPayment": 9166.6667,
-            "interestPayment": 916.6666666667,
+            "date": "2024-10-07",
+            "totalPayment": 9000.0000,
+            "interestPayment": 666.6666666667,
             "debtPayment": 8333.3333333333,
-            "remainingDebt": 82499.9999
+            "remainingDebt": 81000.0000
         },
         {
             "number": 4,
-            "date": "2024-11-04",
-            "totalPayment": 9166.6667,
-            "interestPayment": 916.6666666667,
+            "date": "2024-11-07",
+            "totalPayment": 9000.0000,
+            "interestPayment": 666.6666666667,
             "debtPayment": 8333.3333333333,
-            "remainingDebt": 73333.3332
+            "remainingDebt": 72000.0000
         },
         {
             "number": 5,
-            "date": "2024-12-04",
-            "totalPayment": 9166.6667,
-            "interestPayment": 916.6666666667,
+            "date": "2024-12-07",
+            "totalPayment": 9000.0000,
+            "interestPayment": 666.6666666667,
             "debtPayment": 8333.3333333333,
-            "remainingDebt": 64166.6665
+            "remainingDebt": 63000.0000
         },
         {
             "number": 6,
-            "date": "2025-01-04",
-            "totalPayment": 9166.6667,
-            "interestPayment": 916.6666666667,
+            "date": "2025-01-07",
+            "totalPayment": 9000.0000,
+            "interestPayment": 666.6666666667,
             "debtPayment": 8333.3333333333,
-            "remainingDebt": 54999.9998
+            "remainingDebt": 54000.0000
         },
         {
             "number": 7,
-            "date": "2025-02-04",
-            "totalPayment": 9166.6667,
-            "interestPayment": 916.6666666667,
+            "date": "2025-02-07",
+            "totalPayment": 9000.0000,
+            "interestPayment": 666.6666666667,
             "debtPayment": 8333.3333333333,
-            "remainingDebt": 45833.3331
+            "remainingDebt": 45000.0000
         },
         {
             "number": 8,
-            "date": "2025-03-04",
-            "totalPayment": 9166.6667,
-            "interestPayment": 916.6666666667,
+            "date": "2025-03-07",
+            "totalPayment": 9000.0000,
+            "interestPayment": 666.6666666667,
             "debtPayment": 8333.3333333333,
-            "remainingDebt": 36666.6664
+            "remainingDebt": 36000.0000
         },
         {
             "number": 9,
-            "date": "2025-04-04",
-            "totalPayment": 9166.6667,
-            "interestPayment": 916.6666666667,
+            "date": "2025-04-07",
+            "totalPayment": 9000.0000,
+            "interestPayment": 666.6666666667,
             "debtPayment": 8333.3333333333,
-            "remainingDebt": 27499.9997
+            "remainingDebt": 27000.0000
         },
         {
             "number": 10,
-            "date": "2025-05-04",
-            "totalPayment": 9166.6667,
-            "interestPayment": 916.6666666667,
+            "date": "2025-05-07",
+            "totalPayment": 9000.0000,
+            "interestPayment": 666.6666666667,
             "debtPayment": 8333.3333333333,
-            "remainingDebt": 18333.3330
+            "remainingDebt": 18000.0000
         },
         {
             "number": 11,
-            "date": "2025-06-04",
-            "totalPayment": 9166.6667,
-            "interestPayment": 916.6666666667,
+            "date": "2025-06-07",
+            "totalPayment": 9000.0000,
+            "interestPayment": 666.6666666667,
             "debtPayment": 8333.3333333333,
-            "remainingDebt": 9166.6663
+            "remainingDebt": 9000.0000
         },
         {
             "number": 12,
-            "date": "2025-07-04",
-            "totalPayment": 9166.6667,
-            "interestPayment": 916.6666666667,
+            "date": "2025-07-07",
+            "totalPayment": 9000.0000,
+            "interestPayment": 666.6666666667,
             "debtPayment": 8333.3333333333,
-            "remainingDebt": -0.0004
+            "remainingDebt": 0.0000
         }
     ],
     "insuranceEnabled": false,
-    "salaryClient": false
+    "salaryClient": true
 }
