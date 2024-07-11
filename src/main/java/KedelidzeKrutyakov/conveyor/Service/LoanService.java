@@ -2,6 +2,7 @@ package KedelidzeKrutyakov.conveyor.Service;
 
 import KedelidzeKrutyakov.conveyor.DTO.*;
 import KedelidzeKrutyakov.conveyor.util.*;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestBody;
 
@@ -11,11 +12,13 @@ import java.util.List;
 
 @Service
 public class LoanService {
-    // Базовая ставка
-    private static final BigDecimal BASE_RATE = new BigDecimal("0.15");
+    // Инжекция значения базовой ставки
+    @Value("${loan.baseRate}")
+    private BigDecimal BASE_RATE;
 
-    // Стоимость страховки
-    private static final BigDecimal INSURANCE_COST = new BigDecimal("100000");
+    // Инжекция значения стоимости страховки
+    @Value("${insurance.cost}")
+    private BigDecimal INSURANCE_COST;
 
     // Метод для расчета 4 предложений
     public List<LoanOfferDTO> generateLoanOffers(@RequestBody LoanApplicationRequestDTO loanApplicationRequest) {
