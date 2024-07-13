@@ -31,7 +31,7 @@ public class ValidationService {
         }
 
         // Валидация даты рождения
-        if (!isValidBirthDate(request.getBirthdate())) {
+        if (!isValidBirthDate(request.getBirthDate())) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Дата рождения должна быть не позднее 18 лет с текущего дня.");
         }
 

@@ -15,7 +15,7 @@ public class LoanApplicationRequestDTO { // Запрос на кредит
     private String lastName; // Фамилия
     private String middleName; // Отчество
     private String email; // Email пользователя
-    private LocalDate birthdate; // День рождения
+    private LocalDate birthDate; // День рождения
     private String passportSeries; // Серия паспорта
     private String passportNumber; // Номер паспорта
 }
