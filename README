@@ -13,7 +13,7 @@ POST: localhost:8080/conveyor/offers
   "lastName": "Smith",
   "middleName": "Edward",
   "email": "john.smith@example.com",
-  "birthdate": "1990-01-01",
+  "birthDate": "1990-01-01",
   "passportSeries": "1234",
   "passportNumber": "567890"
 }
